@@ -1,0 +1,27 @@
+# Binaries
+core/main
+cli/aether
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+node/yolov8n.pt
+
+# Node
+node_modules/
+dash/dist/
+dash/.env
+
+# OS
+.DS_Store
+Thumbs.db
