@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  core:
+    build: ./core
+    ports:
+      - "8080:8080"
+    networks:
+      - aether-net
+
+  dash:
+    build: ./dash
+    ports:
+      - "5173:5173"
+    depends_on:
+      - core
+    networks:
+      - aether-net
+
+  node-sim:
+    build: ./node
+    environment:
+      - CORE_URL=ws://core:8080/ws
+    depends_on:
+      - core
+    networks:
+      - aether-net
+
+networks:
+  aether-net:
+    driver: bridge
